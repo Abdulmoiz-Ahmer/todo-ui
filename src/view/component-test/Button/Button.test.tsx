@@ -9,6 +9,4 @@ test("Make sure button is rendering", () => {
 
   //and click to <add button>
   fireEvent.click(addButtonElement);
-
-  expect(screen.getByText("Add")).toBeDisabled();
 });
