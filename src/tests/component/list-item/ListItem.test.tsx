@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { ListItem } from "../../index";
+import { ListItem } from "../../../view";
 
 test("Make sure listitem is rendering", () => {
   render(<ListItem />);

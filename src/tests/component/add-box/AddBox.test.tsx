@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import { AddBox } from "../../index";
+import { AddBox } from "../../../view";
 
 test("Make sure add bar exists and taking input", () => {
   render(<AddBox />);

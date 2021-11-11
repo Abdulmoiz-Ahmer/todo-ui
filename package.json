@@ -19,9 +19,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "yarn run test:acceptance && yarn run test:component",
-    "test:acceptance": "react-scripts test src/container/acceptance-test",
-    "test:component": "react-scripts test src/view/component-test",
+    "test": "react-scripts test tests",
+    "test:acceptance": "react-scripts test src/test/acceptance",
+    "test:component": "react-scripts test src/test/component",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
