@@ -1,6 +1,6 @@
 import React from "react";
 import { render, fireEvent, screen, within } from "@testing-library/react";
-import Home from "../../../view/add-bar";
+import Home from "../../../view/add-box";
 
 test("Adding a TODO item", () => {
   render(<Home />);
