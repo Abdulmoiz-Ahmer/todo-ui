@@ -1,7 +1,7 @@
-import React, { ComponentType, ElementType, ReactNode } from "react";
+import React, { ReactNode } from "react";
 
 type ListProps = {
-  as?: React.ReactNode;
+  as?: ReactNode;
   children: any;
 };
 
