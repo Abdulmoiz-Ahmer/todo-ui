@@ -2,7 +2,7 @@ import React from "react";
 import { render, fireEvent, screen, within } from "@testing-library/react";
 import Home from "../../../view";
 
-test("renders learn react link", () => {
+test("Adding a TODO item", () => {
   render(<Home />);
 
   const inputTextElement = screen.getByPlaceholderText("ToDo");
