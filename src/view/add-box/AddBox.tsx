@@ -1,11 +1,11 @@
 import React from "react";
 
-interface AddBarProps {
+interface AddBoxProps {
   onInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   todoText: string;
 }
 
-export const AddBar = function AddBar(props: AddBarProps) {
+export const AddBox = function AddBox(props: AddBoxProps) {
   const { onInputChange, todoText } = props;
   return (
     <input

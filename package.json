@@ -19,7 +19,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "yarn run test:acceptance test:component",
+    "test": "yarn run test:acceptance && yarn run test:component",
     "test:acceptance": "react-scripts test src/container/acceptance-test",
     "test:component": "react-scripts test src/view/component-test",
     "eject": "react-scripts eject"

@@ -1,9 +1,9 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import { AddBar } from "../../index";
+import { AddBox } from "../../index";
 
 test("Make sure add bar exists and taking input", () => {
-  render(<AddBar />);
+  render(<AddBox />);
 
   const inputTextElement = screen.getByPlaceholderText("ToDo");
 
