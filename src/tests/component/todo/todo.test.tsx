@@ -1,9 +1,16 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { ToDo } from "../../../view";
+import { TodoItem } from "../../../entity/TodoItem";
 
 test("Make sure TODO is rendering", () => {
-  render(<ToDo />);
+  const listItems: TodoItem[] = [
+    TodoItem.fromJSON({
+      id: "618ddb6afe72881053259ea1",
+      description: "Buy some sugar",
+    }),
+  ];
+  render(<ToDo listItems={listItems} />);
 
   // List contains input to add.
   const inputTextElement = screen.getByPlaceholderText("ToDo");
