@@ -1,9 +1,9 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import { Button } from "../../../view";
+import { AddButton } from "../../../view";
 
 test("Make sure button is rendering", () => {
-  render(<Button />);
+  render(<AddButton />);
 
   const addButtonElement = screen.getByText("Add");
 
