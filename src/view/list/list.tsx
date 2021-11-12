@@ -1,12 +1,10 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import { ListItem } from "../../view";
-import { TodoItem } from "../../entity/TodoItem";
+import {IListProps} from "./IListProps";
 
-interface ListProps {
-  items: TodoItem[];
-}
 
-export const List = function List(props: ListProps) {
+
+export const List = function List(props: IListProps) {
   const { items } = props;
   return (
     <ul role="list">

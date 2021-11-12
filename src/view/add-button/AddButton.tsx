@@ -1,10 +1,11 @@
 import React from "react";
+import { IAddButtonProps } from "./IAddButtonProps";
 
-interface ButtonProps {
-  onButtonClick: (event: React.MouseEvent<HTMLElement>) => void;
-}
-
-export const AddButton = function AddButton(props: ButtonProps) {
-  const { onButtonClick } = props;
-  return <button onClick={onButtonClick}>Add</button>;
+export const AddButton = function AddButton(props: IAddButtonProps) {
+  const { onButtonClick, buttonDisabilityStatus } = props;
+  return (
+    <button onClick={onButtonClick} disabled={buttonDisabilityStatus}>
+      Add
+    </button>
+  );
 };

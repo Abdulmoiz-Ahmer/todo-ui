@@ -1,11 +1,8 @@
 import React from "react";
 import { TodoItem } from "../../entity/TodoItem";
+import { IListItemProps } from "./IListItemProps";
 
-interface ListItemProps {
-  item: TodoItem;
-}
-
-export const ListItem = function ListItem(props: ListItemProps) {
+export const ListItem = function ListItem(props: IListItemProps) {
   const { description } = props.item;
   return <li role="list-item">{description}</li>;
 };

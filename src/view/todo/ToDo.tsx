@@ -1,24 +1,27 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import { AddBox, AddButton, List } from "../../view";
 import { TodoItem } from "../../entity/TodoItem";
+import { IToDoProps } from "./ITodoProps";
 
-interface ToDoProps {
-  onButtonClick: (event: React.MouseEvent<HTMLElement>) => void;
-  onInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  todoText: string;
-  listItems: TodoItem[];
-}
-
-export const ToDo = function Todo(props: ToDoProps) {
-  const { onButtonClick, todoText, onInputChange, listItems } = props;
+export const ToDo = function Todo(props: IToDoProps) {
+  const {
+    onButtonClick,
+    todoText,
+    onInputChange,
+    items,
+    buttonDisabilityStatus,
+  } = props;
   return (
     <div>
       <div>
         <AddBox onInputChange={onInputChange} todoText={todoText} />
-        <AddButton onButtonClick={onButtonClick} />
+        <AddButton
+          onButtonClick={onButtonClick}
+          buttonDisabilityStatus={buttonDisabilityStatus}
+        />
       </div>
       <div>
-        <List items={listItems} />
+        <List items={items} />
       </div>
     </div>
   );
