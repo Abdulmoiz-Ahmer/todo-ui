@@ -4,13 +4,13 @@ import { ToDo } from "../../../view";
 import { TodoItem } from "../../../entity/TodoItem";
 
 test("Make sure TODO is rendering", () => {
-  const listItems: TodoItem[] = [
+  const items: TodoItem[] = [
     TodoItem.fromJSON({
       id: "618ddb6afe72881053259ea1",
       description: "Buy some sugar",
     }),
   ];
-  render(<ToDo listItems={listItems} />);
+  render(<ToDo items={items} />);
 
   // List contains input to add.
   const inputTextElement = screen.getByPlaceholderText("ToDo");
