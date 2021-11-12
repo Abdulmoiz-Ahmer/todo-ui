@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@pact-foundation/pact": "^9.16.5",
+    "@pact-foundation/pact-node": "^10.14.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -17,9 +18,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test tests",
-    "test:acceptance": "react-scripts test src/tests/acceptance",
-    "test:component": "react-scripts test src/tests/component",
+    "test": "cross-env CI=true react-scripts test tests",
+    "test:acceptance": "cross-env CI=true react-scripts test src/tests/acceptance",
+    "test:component": "cross-env CI=true react-scripts test src/tests/component",
+    "test:pact": "cross-env CI=true react-scripts test runInBand setupFiles src/tests/contracts/setup.js setupTestFrameworkScriptFile src/tests/contracts/jest-wrapper.js testMatch \"**/*.test.pact.ts\"",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -46,6 +48,7 @@
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "cross-env": "^7.0.3",
     "faker": "^5.5.3"
   }
 }

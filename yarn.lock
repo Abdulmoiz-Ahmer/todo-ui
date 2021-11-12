@@ -1441,7 +1441,7 @@
     mkdirp "^1.0.4"
     rimraf "^3.0.2"
 
-"@pact-foundation/pact-node@^10.13.9":
+"@pact-foundation/pact-node@^10.13.9", "@pact-foundation/pact-node@^10.14.0":
   version "10.14.0"
   resolved "https://registry.yarnpkg.com/@pact-foundation/pact-node/-/pact-node-10.14.0.tgz#d3a2a8f94017f81ba24b32c03bdd824947db224f"
   integrity sha512-r5l8gF3RY0Dq+CeyIObiGvWmc864YI2wmMhwxeVF3tkfAyWpsCH60oe2TyC8UA64LScpbn/yS8RLydgqPTBWyg==
@@ -3892,6 +3892,13 @@ create-hmac@^1.1.0, create-hmac@^1.1.4, create-hmac@^1.1.7:
     ripemd160 "^2.0.0"
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
+
+cross-env@^7.0.3:
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-7.0.3.tgz#865264b29677dc015ba8418918965dd232fc54cf"
+  integrity sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==
+  dependencies:
+    cross-spawn "^7.0.1"
 
 cross-spawn@7.0.3, cross-spawn@^7.0.0, cross-spawn@^7.0.1, cross-spawn@^7.0.2:
   version "7.0.3"
