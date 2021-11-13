@@ -20,4 +20,8 @@ export class TodoItemUseCase implements ITodoItemUseCase {
 
     return items;
   }
+
+  async create(description: string): Promise<void> {
+    await this.client.createTodoItem(description);
+  }
 }
