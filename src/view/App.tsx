@@ -1,22 +1,24 @@
-import React from 'react';
-import './App.css';
-
+import React from "react";
+import "./App.css";
+import { ToDo } from "../view";
+import { TodoContainer } from "../container/TodoContainer";
+import { TodoItemUseCase } from "../usecase/TodoItemUseCase";
+import { RestClient } from "../adapter/RestClient";
 function App() {
+  const restClient = new RestClient("http://todo.api.cryptobros.site/api");
+  const todoUseCase = new TodoItemUseCase(restClient);
+  const { state, functions } = TodoContainer({ useCase: todoUseCase });
+  const { buttonDisabilityStatus, todoText, todoList } = state;
+  const { handleButtonClick, onInputChange } = functions;
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ToDo
+        buttonDisabilityStatus={buttonDisabilityStatus}
+        onButtonClick={handleButtonClick}
+        todoText={todoText}
+        onInputChange={onInputChange}
+        items={todoList}
+      />
     </div>
   );
 }
