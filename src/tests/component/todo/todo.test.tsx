@@ -10,6 +10,7 @@ test("Make sure TODO is rendering", () => {
       description: "Buy some sugar",
     }),
   ];
+
   render(<ToDo items={items} />);
 
   // List contains input to add.
