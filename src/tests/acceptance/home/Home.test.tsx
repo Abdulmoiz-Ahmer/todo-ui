@@ -38,7 +38,7 @@ test("Adding a TODO item", async () => {
 
   // List Item
   const listItemElement = screen.queryAllByRole("list-item");
-  expect(listItemElement.firstChild).toBeNotNull();
+  expect(listItemElement.firstChild).not.toBeNull();
 
   // Checking whether list is added or not
   const listItem = screen.getByText(todoText);
