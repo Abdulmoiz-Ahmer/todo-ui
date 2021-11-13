@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { RestClient } from "../adapter/RestClient";
 
 export const TodoContainer = () => {
   const [buttonDisabilityStatus, setButtonDisabilityStatus] = useState(false);
@@ -8,7 +9,7 @@ export const TodoContainer = () => {
     setButtonDisabilityStatus(true);
   }
 
-  function updateTodoText(todoText: string) {
+  function onInputChange(event: React.ChangeEvent<HTMLInputElement>) {
     setTodoText(todoText);
   }
 
@@ -19,7 +20,7 @@ export const TodoContainer = () => {
     },
     functions: {
       handleButtonClick,
-      updateTodoText,
+      onInputChange,
     },
   };
 };
