@@ -25,6 +25,29 @@ export class RestClient implements IRestClient {
     }
   }
 
+  public async createTodoItem(
+    description: string
+  ): Promise<Response | undefined> {
+    // eslint-disable-next-line no-useless-catch
+    try {
+      const response = await this.client(this._createUrl("/todos"), {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          description,
+        }),
+      });
+
+      if (response.ok) {
+        return response.json();
+      }
+    } catch (error) {
+      throw error;
+    }
+  }
+
   private _createUrl(resource: string): string {
     return this.endpoint + resource;
   }
