@@ -1,4 +1,5 @@
 import React from "react";
+import { TodoItem } from "../../entity/TodoItem";
 import { ListItem } from "../../view";
 import {IListProps} from "./IListProps";
 
