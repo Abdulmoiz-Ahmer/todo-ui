@@ -21,7 +21,6 @@
     "test": "cross-env CI=true react-scripts test tests",
     "test:acceptance": "cross-env CI=true react-scripts test src/tests/acceptance",
     "test:component": "cross-env CI=true react-scripts test src/tests/component",
-    "test:pact": "cross-env CI=true react-scripts test runInBand setupFiles src/tests/contracts/setup.js setupTestFrameworkScriptFile src/tests/contracts/jest-wrapper.js testMatch \"**/*.test.pact.ts\"",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
