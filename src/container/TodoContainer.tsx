@@ -26,8 +26,19 @@ export const TodoContainer = ({ useCase }: TodoContainerProps) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  function handleButtonClick() {
-    setButtonDisabilityStatus(true);
+  async function handleButtonClick() {
+    try {
+      if (todoText !== "") {
+        setButtonDisabilityStatus(true);
+        await useCase.create(todoText);
+        const todoListItems = await useCase.findAll();
+        setTodoList(todoListItems);
+        setTodoText("");
+        setButtonDisabilityStatus(false);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   function onInputChange(event: React.ChangeEvent<HTMLInputElement>) {
