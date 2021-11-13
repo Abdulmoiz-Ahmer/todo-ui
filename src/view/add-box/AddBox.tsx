@@ -5,6 +5,7 @@ export const AddBox = function AddBox(props: IAddBoxProps) {
   const { onInputChange, todoText } = props;
   return (
     <input
+      className="todo-textbox"
       type="text"
       onChange={onInputChange}
       value={todoText}

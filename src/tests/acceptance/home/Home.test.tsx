@@ -1,7 +1,6 @@
 import React from "react";
 import { render, fireEvent, screen } from "@testing-library/react";
 import { ToDo } from "../../../view";
-import { TodoItem } from "../../../entity/TodoItem";
 import { TodoItemUseCase } from "../../../usecase/TodoItemUseCase";
 import faker from "faker";
 import { RestClient } from "../../../adapter/RestClient";

@@ -12,8 +12,9 @@ export const ToDo = function Todo(props: IToDoProps) {
     buttonDisabilityStatus,
   } = props;
   return (
-    <div>
+    <div className="todo-container">
       <div>
+        <h2>TODO List</h2>
         <AddBox onInputChange={onInputChange} todoText={todoText} />
         <AddButton
           onButtonClick={onButtonClick}
