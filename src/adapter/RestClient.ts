@@ -30,7 +30,7 @@ export class RestClient implements IRestClient {
   ): Promise<Response | undefined> {
     // eslint-disable-next-line no-useless-catch
     try {
-      const response = await this.client(this._createUrl("/todos"), {
+      const response = await this.client(this._createUrl("/todo"), {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
