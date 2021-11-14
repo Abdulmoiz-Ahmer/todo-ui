@@ -1,4 +1,3 @@
-import { string } from "@pact-foundation/pact/src/dsl/matchers";
 import React, { useState, useEffect } from "react";
 import { TodoItem } from "../entity/TodoItem";
 import { TodoItemUseCase } from "../usecase/TodoItemUseCase";
