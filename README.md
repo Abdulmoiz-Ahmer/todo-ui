@@ -71,6 +71,11 @@ For Testing
 - Component
 - Unit testing
 
+For Deployment
+
+- CircleCI pipeline to trigger deployment on push
+- Digital Ocean Droplet
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Built With
