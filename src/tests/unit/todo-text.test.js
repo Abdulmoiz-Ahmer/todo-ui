@@ -7,9 +7,11 @@ import { useTodoContainer } from "../../container/useTodoContainer";
 import faker from "faker";
 test("todo-text", async () => {
   const { result } = renderHook(() =>
-    useTodoContainer(
-      new TodoItemUseCase(new RestClient("http://todo.api.cryptobros.site/api"))
-    )
+    useTodoContainer({
+      useCase: new TodoItemUseCase(
+        new RestClient("http://todo.api.cryptobros.site/api")
+      ),
+    })
   );
 
   const text = faker.lorem.sentence();
