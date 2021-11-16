@@ -17,6 +17,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "cross-env CI=true react-scripts test tests",
+    "test:unit": "cross-env CI=true react-scripts test src/tests/unit",
     "test:acceptance": "cross-env CI=true react-scripts test src/tests/acceptance",
     "test:component": "cross-env CI=true react-scripts test src/tests/component",
     "eject": "react-scripts eject"
@@ -40,6 +41,7 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/react-hooks": "^7.0.2",
     "@types/faker": "^5.5.9",
     "@types/jest": "^26.0.15",
     "@types/node": "^12.0.0",
