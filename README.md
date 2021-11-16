@@ -35,6 +35,7 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
+    <li><a href="#testing">Testing</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -64,12 +65,6 @@ Few words about the above architecture:
 
 - Outer Layer
   View and Containers. Represents the UI or interface (Web or CLI). It communicates only with the data-access layer. Views are dump components and containers have states related to the view.
-
-For Testing
-
-- Acceptance testing
-- Component
-- Unit testing
 
 For Deployment
 
@@ -123,6 +118,43 @@ For Deployment
 This repository has been used with a [todo backend api](http://todo.api.cryptobros.site/api/ping) and it's [repository.](https://github.com/Abdulmoiz-Ahmer/todo-api.git)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+## Testing
+
+- Acceptance testing:
+  Acceptance tests are in the tests/acceptance directory.
+  Can be invoked with:
+
+  ```js
+  yarn test:acceptance
+  ```
+
+- Component:
+  Component tests are in the tests/acceptance directory.
+  Can be invoked with:
+
+  ```js
+    yarn test:component
+  ```
+
+- Unit testing
+  Unit Tests are in src folder in all folder along with the implementation.
+
+  ```js
+   yarn test:unit
+  ```
+
+Libraries used for testing:
+
+- [Jest](https://www.npmjs.com/package/jest) for assertion.
+- [React Testing Library]() for ui testing.
+- [React Testing Library](https://react-hooks-testing-library.com/) for custom hooks testing.
+
+Note: To invoke all kind of tests use:
+
+```js
+ yarn test
+```
 
 <!-- CONTRIBUTING -->
 
