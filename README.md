@@ -147,8 +147,8 @@ This repository has been used with a [todo backend api](http://todo.api.cryptobr
 Libraries used for testing:
 
 - [Jest](https://www.npmjs.com/package/jest) for assertion.
-- [React Testing Library]() for ui testing.
-- [React Testing Library](https://react-hooks-testing-library.com/) for custom hooks testing.
+- [React Testing Library](https://www.npmjs.com/package/@testing-library/react) for ui testing.
+- [React Hooks Testing Library](https://www.npmjs.com/package/@testing-library/react-hooks) for custom hook testing.
 
 Note: To invoke all kind of tests use:
 
