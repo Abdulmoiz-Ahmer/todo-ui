@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import { TodoItem } from "../entity/TodoItem";
 import { TodoItemUseCase } from "../usecase/TodoItemUseCase";
 
-interface TodoContainerProps {
+interface useTodoContainerProps {
   useCase: TodoItemUseCase;
 }
 
-export const TodoContainer = ({ useCase }: TodoContainerProps) => {
+export const useTodoContainer = ({ useCase }: useTodoContainerProps) => {
+  
+  
   const [buttonDisabilityStatus, setButtonDisabilityStatus] =
     useState<boolean>(false);
   const [todoText, setTodoText] = useState<string>("");
