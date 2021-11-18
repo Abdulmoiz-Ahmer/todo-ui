@@ -1,7 +1,10 @@
-import { regex, somethingLike } from "@pact-foundation/pact/src/dsl/matchers";
+import {
+  somethingLike,
+  eachLike,
+} from "@pact-foundation/pact/src/dsl/matchers";
 
 export class Interactions {
-  getAllTodoItems(expectedOutCome: Array<object>): any {
+  getAllTodoItems(expectedOutCome: object): any {
     return {
       state: "todos exist",
       uponReceiving: "a request to get all todos",
@@ -12,12 +15,9 @@ export class Interactions {
       willRespondWith: {
         status: 200,
         headers: {
-          "Content-Type": regex({
-            generate: "application/json; charset=utf-8",
-            matcher: "application/json;?.*",
-          }),
+          "Content-Type": "application/json; charset=utf-8",
         },
-        body: expectedOutCome,
+        body: eachLike(expectedOutCome),
       },
     };
   }
@@ -29,16 +29,13 @@ export class Interactions {
       withRequest: {
         method: "POST",
         path: "/api/todo",
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: { description },
       },
       willRespondWith: {
         status: 200,
-        headers: {
-          "Content-Type": regex({
-            generate: "application/json; charset=utf-8",
-            matcher: "application/json;?.*",
-          }),
-        },
         body: somethingLike({
           id: "619597be1161467d112ccc11",
           description,

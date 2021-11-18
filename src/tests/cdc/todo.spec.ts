@@ -9,21 +9,13 @@ describe("API Pact test", () => {
   describe("retrieving todos", () => {
     test("todo exists", async () => {
       // set up Pact interactions
-      const expectedTodos = [
-        {
-          id: "619267a8855d276b2a3fee2e",
-          description: "Numquam sit mollitia aliquid iure quia ea ut expedita.",
-        },
-        {
-          id: "619267a8855d276b2a3fee32",
-          description:
-            "Vitae vel necessitatibus impedit rerum possimus quia quisquam repudiandae.",
-        },
-      ];
+      const expectedTodo = {
+        description: "Numquam sit mollitia aliquid iure quia ea ut expedita.",
+      };
 
       const interactions = new Interactions();
       await mockProvider.addInteraction(
-        interactions.getAllTodoItems(expectedTodos)
+        interactions.getAllTodoItems(expectedTodo)
       );
 
       const api = new RestClient(mockProvider.mockService.baseUrl + "/api");
@@ -32,18 +24,6 @@ describe("API Pact test", () => {
       const todos = await api.getAllTodoItems();
 
       expect(todos).not.toHaveLength(0);
-      let foundLength = 0;
-
-      todos.forEach((todo: { id: string; description: string }) => {
-        const index = expectedTodos.findIndex(
-          (object) => object.id === todo.id
-        );
-        if (index !== -1) {
-          foundLength++;
-        }
-      });
-
-      expect(foundLength).toBe(2);
     });
   });
 
