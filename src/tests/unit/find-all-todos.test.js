@@ -1,9 +1,10 @@
 import React from "react";
 import { TodoItemUseCase } from "../../usecase/TodoItemUseCase";
 import { RestClient } from "../../adapter/RestClient";
+import { config } from "../../config";
 
 test("Testing todo find all usecase", async () => {
-  const restClient = new RestClient("http://todo.api.cryptobros.site/api");
+  const restClient = new RestClient(config.backend_url);
   const todoUseCase = new TodoItemUseCase(restClient);
   const items = await todoUseCase.findAll();
   expect(items).not.toBeUndefined();

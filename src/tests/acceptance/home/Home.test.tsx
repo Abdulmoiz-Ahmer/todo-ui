@@ -6,13 +6,12 @@ import faker from "faker";
 import { RestClient } from "../../../adapter/RestClient";
 import { renderHook, act } from "@testing-library/react-hooks";
 import { useTodoContainer } from "../../../container/useTodoContainer";
+import { config } from "../../../config";
 
 test("User should be able to see old lists if they are already Present", async () => {
   const { result, waitForValueToChange } = renderHook(() =>
     useTodoContainer({
-      useCase: new TodoItemUseCase(
-        new RestClient("http://todo.api.cryptobros.site/api")
-      ),
+      useCase: new TodoItemUseCase(new RestClient(config.backend_url)),
     })
   );
 
@@ -46,9 +45,7 @@ test("Adding a TODO item", async () => {
   // let { result, waitForValueToChange, rerender };
   let obj = renderHook(() =>
     useTodoContainer({
-      useCase: new TodoItemUseCase(
-        new RestClient("http://todo.api.cryptobros.site/api")
-      ),
+      useCase: new TodoItemUseCase(new RestClient(config.backend_url)),
     })
   );
 

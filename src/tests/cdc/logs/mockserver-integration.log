@@ -1,5 +1,5 @@
-I, [2021-11-18T08:31:35.351734 #69632]  INFO -- : Registered expected interaction GET /api/todos
-D, [2021-11-18T08:31:35.352936 #69632] DEBUG -- : {
+I, [2021-11-18T09:31:09.996318 #73759]  INFO -- : Registered expected interaction GET /api/todos
+D, [2021-11-18T09:31:09.997359 #73759] DEBUG -- : {
   "description": "a request to get all todos",
   "providerState": "todos exist",
   "request": {
@@ -21,8 +21,8 @@ D, [2021-11-18T08:31:35.352936 #69632] DEBUG -- : {
   },
   "metadata": null
 }
-I, [2021-11-18T08:31:35.365519 #69632]  INFO -- : Received request GET /api/todos
-D, [2021-11-18T08:31:35.365635 #69632] DEBUG -- : {
+I, [2021-11-18T09:31:10.008416 #73759]  INFO -- : Received request GET /api/todos
+D, [2021-11-18T09:31:10.008530 #73759] DEBUG -- : {
   "path": "/api/todos",
   "query": "",
   "method": "get",
@@ -32,14 +32,14 @@ D, [2021-11-18T08:31:35.365635 #69632] DEBUG -- : {
     "Accept-Language": "en",
     "Accept": "*/*",
     "Origin": "http://localhost",
-    "Host": "127.0.0.1:59337",
+    "Host": "127.0.0.1:60371",
     "Accept-Encoding": "gzip, deflate",
     "Connection": "keep-alive",
     "Version": "HTTP/1.1"
   }
 }
-I, [2021-11-18T08:31:35.365843 #69632]  INFO -- : Found matching response for GET /api/todos
-D, [2021-11-18T08:31:35.365894 #69632] DEBUG -- : {
+I, [2021-11-18T09:31:10.008750 #73759]  INFO -- : Found matching response for GET /api/todos
+D, [2021-11-18T09:31:10.008819 #73759] DEBUG -- : {
   "status": 200,
   "headers": {
     "Content-Type": "application/json; charset=utf-8"
@@ -52,10 +52,10 @@ D, [2021-11-18T08:31:35.365894 #69632] DEBUG -- : {
     "min": 1
   }
 }
-I, [2021-11-18T08:31:35.374218 #69632]  INFO -- : Verifying - interactions matched
-I, [2021-11-18T08:31:35.377154 #69632]  INFO -- : Cleared interactions
-I, [2021-11-18T08:31:35.381425 #69632]  INFO -- : Registered expected interaction POST /api/todo
-D, [2021-11-18T08:31:35.381496 #69632] DEBUG -- : {
+I, [2021-11-18T09:31:10.017180 #73759]  INFO -- : Verifying - interactions matched
+I, [2021-11-18T09:31:10.019628 #73759]  INFO -- : Cleared interactions
+I, [2021-11-18T09:31:10.023060 #73759]  INFO -- : Registered expected interaction POST /api/todo
+D, [2021-11-18T09:31:10.023131 #73759] DEBUG -- : {
   "description": "a POST request to create an item",
   "providerState": "provider allows todo item creation",
   "request": {
@@ -82,8 +82,8 @@ D, [2021-11-18T08:31:35.381496 #69632] DEBUG -- : {
   },
   "metadata": null
 }
-I, [2021-11-18T08:31:35.385687 #69632]  INFO -- : Received request POST /api/todo
-D, [2021-11-18T08:31:35.385766 #69632] DEBUG -- : {
+I, [2021-11-18T09:31:10.026904 #73759]  INFO -- : Received request POST /api/todo
+D, [2021-11-18T09:31:10.026992 #73759] DEBUG -- : {
   "path": "/api/todo",
   "query": "",
   "method": "post",
@@ -98,14 +98,14 @@ D, [2021-11-18T08:31:35.385766 #69632] DEBUG -- : {
     "Accept-Language": "en",
     "Accept": "*/*",
     "Origin": "http://localhost",
-    "Host": "127.0.0.1:59337",
+    "Host": "127.0.0.1:60371",
     "Accept-Encoding": "gzip, deflate",
     "Connection": "keep-alive",
     "Version": "HTTP/1.1"
   }
 }
-I, [2021-11-18T08:31:35.386217 #69632]  INFO -- : Found matching response for POST /api/todo
-D, [2021-11-18T08:31:35.386286 #69632] DEBUG -- : {
+I, [2021-11-18T09:31:10.027481 #73759]  INFO -- : Found matching response for POST /api/todo
+D, [2021-11-18T09:31:10.027529 #73759] DEBUG -- : {
   "status": 200,
   "headers": {
   },
@@ -117,6 +117,6 @@ D, [2021-11-18T08:31:35.386286 #69632] DEBUG -- : {
     }
   }
 }
-I, [2021-11-18T08:31:35.390023 #69632]  INFO -- : Verifying - interactions matched
-I, [2021-11-18T08:31:35.392687 #69632]  INFO -- : Cleared interactions
-I, [2021-11-18T08:31:35.395508 #69632]  INFO -- : Writing pact for todo-api to /Users/abdulmoiz_ahmer/workspace/todo-app/todo-ui/src/tests/cdc/pacts/todo-ui-todo-api.json
+I, [2021-11-18T09:31:10.031213 #73759]  INFO -- : Verifying - interactions matched
+I, [2021-11-18T09:31:10.033356 #73759]  INFO -- : Cleared interactions
+I, [2021-11-18T09:31:10.035985 #73759]  INFO -- : Writing pact for todo-api to /Users/abdulmoiz_ahmer/workspace/todo-app/todo-ui/src/tests/cdc/pacts/todo-ui-todo-api.json

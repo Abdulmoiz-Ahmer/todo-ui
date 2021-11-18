@@ -4,8 +4,10 @@ import { ToDo } from "../../view";
 import { useTodoContainer } from "../../container/useTodoContainer";
 import { TodoItemUseCase } from "../../usecase/TodoItemUseCase";
 import { RestClient } from "../../adapter/RestClient";
+import { config } from "../../config";
+
 function App() {
-  const restClient = new RestClient("http://todo.api.cryptobros.site/api");
+  const restClient = new RestClient(config.backend_url);
   const todoUseCase = new TodoItemUseCase(restClient);
   const { state, functions } = useTodoContainer({ useCase: todoUseCase });
   const { buttonDisabilityStatus, todoText, todoList } = state;
