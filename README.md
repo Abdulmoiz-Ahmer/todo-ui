@@ -9,7 +9,7 @@
     A todo application build with reactjs, typescript, clean code architecture and tdd
     <br />
     <br />
-    <a href="http://todo.ui.cryptobros.site">View Demo</a>
+    <a href="https://todo.ui.cryptobros.site">View Demo</a>
     ·
     <a href="https://github.com/Abdulmoiz-Ahmer/todo-ui/issues">Report Bug</a>
     ·
@@ -116,7 +116,7 @@ For Deployment
 
 ## Usage
 
-This repository has been used with a [todo backend api](http://todo.api.cryptobros.site/api/ping) and it's [repository.](https://github.com/Abdulmoiz-Ahmer/todo-api.git)
+This repository has been used with a [todo backend api](https://todo.api.cryptobros.site/api/ping) and it's [repository.](https://github.com/Abdulmoiz-Ahmer/todo-api.git)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -196,7 +196,7 @@ Distributed under the MIT License.
 
 Your Name - [Abdulmoiz Ahmer]() - abdulmoiz1996@gmail.com
 
-Project Link: [http://todo.ui.cryptobros.site](https://github.com/Abdulmoiz-Ahmer/todo-ui)
+Project Link: [https://todo.ui.cryptobros.site](https://github.com/Abdulmoiz-Ahmer/todo-ui)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
