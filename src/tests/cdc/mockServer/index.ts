@@ -1,2 +1,3 @@
-export * from "./interactions";
 export * from "./mockProvider";
+export * from "./Interactions";
+
