@@ -7,6 +7,9 @@ export class RestClient implements IRestClient {
   client: any;
 
   constructor(endpoint: string) {
+    if (endpoint === undefined || endpoint === "") {
+      endpoint = "http://localhost:4000/api";
+    }
     this.endpoint = endpoint;
     this.client = fetch;
   }
