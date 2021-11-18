@@ -29,6 +29,6 @@ test("Make sure TODO is rendering", () => {
   expect(listElement).toBeInTheDocument();
 
   // List Item
-  const listItemElement = screen.getByRole("list-item");
+  const listItemElement = screen.getByRole("listitem");
   expect(listItemElement).toBeInTheDocument();
 });

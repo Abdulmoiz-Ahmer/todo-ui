@@ -13,6 +13,6 @@ test("Make sure listitem is rendering", () => {
     />
   );
 
-  const listItemElement = screen.getByRole("list-item");
+  const listItemElement = screen.getByRole("listitem");
   expect(listItemElement).toBeInTheDocument();
 });

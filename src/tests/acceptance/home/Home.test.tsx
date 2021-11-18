@@ -119,6 +119,6 @@ test("Adding a TODO item", async () => {
   expect(listElement).toBeInTheDocument();
 
   // List Item
-  const listItemElement = screen.queryAllByRole("list-item");
+  const listItemElement = screen.queryAllByRole("listitem");
   expect(listItemElement.firstChild).not.toBeNull();
 });

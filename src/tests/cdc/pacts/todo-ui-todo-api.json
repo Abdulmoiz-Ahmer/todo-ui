@@ -1,0 +1,70 @@
+{
+  "consumer": {
+    "name": "todo-ui"
+  },
+  "provider": {
+    "name": "todo-api"
+  },
+  "interactions": [
+    {
+      "description": "a request to get all todos",
+      "providerState": "todos exist",
+      "request": {
+        "method": "GET",
+        "path": "/api/todos"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        "body": [
+          {
+            "description": "Numquam sit mollitia aliquid iure quia ea ut expedita."
+          }
+        ],
+        "matchingRules": {
+          "$.body": {
+            "min": 1
+          },
+          "$.body[*].*": {
+            "match": "type"
+          }
+        }
+      }
+    },
+    {
+      "description": "a POST request to create an item",
+      "providerState": "provider allows todo item creation",
+      "request": {
+        "method": "POST",
+        "path": "/api/todo",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+        },
+        "body": {
+          "id": "619597be1161467d112ccc11",
+          "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+        },
+        "matchingRules": {
+          "$.body": {
+            "match": "type"
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}
