@@ -69,7 +69,7 @@ Few words about the above architecture:
 For Deployment
 
 - Husky pre-push to trigger tests
-- CircleCI pipeline to trigger deployment on push
+- CircleCI pipeline to trigger build, test and deployment on push to linux server.
 - Digital Ocean Droplet
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -151,6 +151,8 @@ This repository has been used with a [todo backend api](http://todo.api.cryptobr
   ```js
     yarn test:contracts
   ```
+
+[Sample test run report of circleci pipeline](https://circleci.com/api/v1.1/project/github/Abdulmoiz-Ahmer/todo-ui/33/output/103/0?file=true&allocation-id=619672d9fdf920768e412396-0-build%2F52BB9147)
 
 Libraries used for testing:
 
