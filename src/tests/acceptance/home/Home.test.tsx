@@ -1,35 +1,118 @@
 import React from "react";
-import { render, fireEvent, screen } from "@testing-library/react";
+import { render, fireEvent, screen, waitFor } from "@testing-library/react";
 import { ToDo } from "../../../view";
 import { TodoItemUseCase } from "../../../usecase/TodoItemUseCase";
 import faker from "faker";
 import { RestClient } from "../../../adapter/RestClient";
+import { renderHook, act } from "@testing-library/react-hooks";
+import { useTodoContainer } from "../../../container/useTodoContainer";
+
+test("User should be able to see old lists if they are already Present", async () => {
+  const { result, waitForValueToChange } = renderHook(() =>
+    useTodoContainer({
+      useCase: new TodoItemUseCase(
+        new RestClient("http://todo.api.cryptobros.site/api")
+      ),
+    })
+  );
+
+  await waitForValueToChange(
+    () => {
+      return result.current.state.todoList;
+    },
+    { timeout: 5000 }
+  );
+
+  expect(result.current.state.todoList).not.toBeUndefined();
+  expect(result.current.state.todoList).not.toBeNull();
+  expect(result.current.state.todoList).not.toBe(null);
+  expect(result.current.state.todoList).not.toEqual(null);
+  expect(result.current.state.todoList).not.toBe("");
+  expect(result.current.state.todoList).not.toHaveLength(0);
+
+  render(
+    <ToDo
+      buttonDisabilityStatus={false}
+      items={result.current.state.todoList}
+    />
+  );
+
+  // List of todos
+  const listElement = screen.getByRole("list");
+  expect(listElement).toBeInTheDocument();
+});
 
 test("Adding a TODO item", async () => {
-  const restClient = new RestClient("http://todo.api.cryptobros.site/api");
-  const todoUseCase = new TodoItemUseCase(restClient);
-  const items = await todoUseCase.findAll();
-  expect(items).not.toBeUndefined();
-  expect(items).not.toBeNull();
-  expect(items).not.toBe(null);
-  expect(items).not.toEqual(null);
-  expect(items).not.toBe("");
-  expect(items).not.toHaveLength(0);
+  // let { result, waitForValueToChange, rerender };
+  let obj = renderHook(() =>
+    useTodoContainer({
+      useCase: new TodoItemUseCase(
+        new RestClient("http://todo.api.cryptobros.site/api")
+      ),
+    })
+  );
 
-  render(<ToDo buttonDisabilityStatus={false} items={items} />);
+  render(
+    <ToDo
+      todoText={obj.result.current.state.todoText}
+      onButtonClick={obj.result.current.functions.handleButtonClick}
+      onInputChange={obj.result.current.functions.onInputChange}
+      buttonDisabilityStatus={obj.result.current.state.buttonDisabilityStatus}
+      items={[]}
+    />
+  );
 
-  const todoText = faker.lorem.sentence();
+  const text = faker.lorem.sentence();
 
   // List contains input to add.
   const inputTextElement = screen.getByPlaceholderText("ToDo");
+
   fireEvent.change(inputTextElement, {
-    target: { value: todoText },
+    target: { value: text },
   });
-  expect(inputTextElement.value).toBe(todoText);
+
+  await obj.waitForValueToChange(
+    () => {
+      return obj.result.current.state.todoList;
+    },
+    { timeout: 5000 }
+  );
+
+  obj.rerender(
+    <ToDo
+      todoText={obj.result.current.state.todoText}
+      onButtonClick={obj.result.current.functions.handleButtonClick}
+      onInputChange={obj.result.current.functions.onInputChange}
+      buttonDisabilityStatus={false}
+      items={[]}
+    />
+  );
+
+  // List button to add.
+  await act(async () => {
+    obj.result.current.functions.handleButtonClick();
+  });
 
   // List button to add.
   const addButtonElement = screen.getByText("Add");
   fireEvent.click(addButtonElement);
+
+  await obj.waitForValueToChange(
+    () => {
+      return obj.result.current.state.todoList;
+    },
+    { timeout: 4000 }
+  );
+
+  obj.rerender(
+    <ToDo
+      todoText={obj.result.current.state.todoText}
+      onButtonClick={obj.result.current.functions.handleButtonClick}
+      onInputChange={obj.result.current.functions.onInputChange}
+      buttonDisabilityStatus={obj.result.current.state.buttonDisabilityStatus}
+      items={obj.result.current.state.todoList}
+    />
+  );
 
   // List of todos
   const listElement = screen.getByRole("list");
@@ -38,8 +121,4 @@ test("Adding a TODO item", async () => {
   // List Item
   const listItemElement = screen.queryAllByRole("list-item");
   expect(listItemElement.firstChild).not.toBeNull();
-
-  // Checking whether list is added or not
-  const listItem = screen.getByText(todoText);
-  expect(listItem).toBeInTheDocument();
 });

@@ -19,10 +19,11 @@
     "build": "react-scripts build",
     "test": "yarn run test:unit && yarn run test:component && yarn run test:contracts && yarn run test:acceptance",
     "test:unit": "cross-env CI=true react-scripts test src/tests/unit",
-    "test:acceptance": "cross-env CI=true react-scripts test src/tests/acceptance",
+    "test:acceptance": "cross-env CI=true react-scripts test --testTimeout 30000 src/tests/acceptance",
     "test:component": "cross-env CI=true react-scripts test src/tests/component",
     "test:contracts": "cross-env CI=true react-scripts test --testTimeout 50000 src/tests/cdc",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -50,6 +51,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "cross-env": "^7.0.3",
-    "faker": "^5.5.3"
+    "faker": "^5.5.3",
+    "husky": "^7.0.0"
   }
 }
