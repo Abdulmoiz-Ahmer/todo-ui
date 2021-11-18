@@ -68,6 +68,7 @@ Few words about the above architecture:
 
 For Deployment
 
+- Husky pre-push to trigger tests
 - CircleCI pipeline to trigger deployment on push
 - Digital Ocean Droplet
 
@@ -203,11 +204,13 @@ Project Link: [http://todo.ui.cryptobros.site](https://github.com/Abdulmoiz-Ahme
 
 - [Clean code architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 - [CircleCI](https://circleci.com/)
+- [Docker](https://www.docker.com/)
 - [Digital Ocean Droplet](https://www.digitalocean.com/)
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 - [Jest](https://www.npmjs.com/package/jest)
 - [Faker](https://www.npmjs.com/package/faker)
 - [crossenv](https://www.npmjs.com/package/cross-env)
+- [Husky](https://www.npmjs.com/package/husky)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
