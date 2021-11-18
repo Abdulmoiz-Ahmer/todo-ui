@@ -1,6 +1,5 @@
 import React from "react";
 import { AddBox, AddButton, List } from "../../view";
-import { TodoItem } from "../../entity/TodoItem";
 import { IToDoProps } from "./ITodoProps";
 
 export const ToDo = function Todo(props: IToDoProps) {

@@ -1,5 +1,4 @@
 import React from "react";
-import { TodoItem } from "../../entity/TodoItem";
 import { IListItemProps } from "./IListItemProps";
 
 export const ListItem = function ListItem(props: IListItemProps) {
