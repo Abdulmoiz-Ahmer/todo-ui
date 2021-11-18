@@ -17,11 +17,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "cross-env CI=true react-scripts test tests",
+    "test": "yarn run test:unit && yarn run test:component && yarn run test:contracts && yarn run test:acceptance",
     "test:unit": "cross-env CI=true react-scripts test src/tests/unit",
     "test:acceptance": "cross-env CI=true react-scripts test src/tests/acceptance",
     "test:component": "cross-env CI=true react-scripts test src/tests/component",
-    "test:contracts": "cross-env CI=true react-scripts test --testTimeout 30000 src/tests/cdc",
+    "test:contracts": "cross-env CI=true react-scripts test --testTimeout 50000 src/tests/cdc",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

@@ -11,14 +11,13 @@ describe("API Pact test", () => {
       // set up Pact interactions
       const expectedTodos = [
         {
-          id: "61958b63e52dfc6edc050bc2",
-          description:
-            "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+          id: "619267a8855d276b2a3fee2e",
+          description: "Numquam sit mollitia aliquid iure quia ea ut expedita.",
         },
         {
-          id: "61958b63e52dfc6edc050bc3",
+          id: "619267a8855d276b2a3fee32",
           description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "Vitae vel necessitatibus impedit rerum possimus quia quisquam repudiandae.",
         },
       ];
 
@@ -27,13 +26,24 @@ describe("API Pact test", () => {
         interactions.getAllTodoItems(expectedTodos)
       );
 
-      const api = new RestClient(mockProvider.mockService.baseUrl);
+      const api = new RestClient(mockProvider.mockService.baseUrl + "/api");
 
       //   make request to Pact mock server
       const todos = await api.getAllTodoItems();
 
-      expect(todos).toHaveLength(expectedTodos.length);
-      expect(todos).toEqual(expectedTodos);
+      expect(todos).not.toHaveLength(0);
+      let foundLength = 0;
+
+      todos.forEach((todo: { id: string; description: string }) => {
+        const index = expectedTodos.findIndex(
+          (object) => object.id === todo.id
+        );
+        if (index !== -1) {
+          foundLength++;
+        }
+      });
+
+      expect(foundLength).toBe(2);
     });
   });
 
@@ -51,7 +61,7 @@ describe("API Pact test", () => {
         interactions.createTodoItem(expectedTodo.description)
       );
 
-      const api = new RestClient(mockProvider.mockService.baseUrl);
+      const api = new RestClient(mockProvider.mockService.baseUrl + "/api");
 
       //   make request to Pact mock server
       const todo = await api.createTodoItem(expectedTodo.description);
