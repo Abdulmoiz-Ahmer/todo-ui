@@ -21,7 +21,7 @@
     "test:unit": "cross-env CI=true react-scripts test src/tests/unit",
     "test:acceptance": "cross-env CI=true react-scripts test src/tests/acceptance",
     "test:component": "cross-env CI=true react-scripts test src/tests/component",
-    "test:pact": "cross-env CI=true react-scripts test --testTimeout 30000 src/tests/cdc",
+    "test:contracts": "cross-env CI=true react-scripts test --testTimeout 30000 src/tests/cdc",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

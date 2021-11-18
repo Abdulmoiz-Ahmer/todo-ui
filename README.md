@@ -137,11 +137,18 @@ This repository has been used with a [todo backend api](http://todo.api.cryptobr
     yarn test:component
   ```
 
-- Unit testing
-  Unit Tests are in src folder in all folder along with the implementation.
+- Unit testing:
+  Component tests are in the tests/unit directory.
+  Can be invoked with:
 
   ```js
-   yarn test:unit
+    yarn test:unit
+  ```
+
+- Contract Driven Testing:
+
+  ```js
+    yarn test:contracts
   ```
 
 Libraries used for testing:
@@ -149,6 +156,7 @@ Libraries used for testing:
 - [Jest](https://www.npmjs.com/package/jest) for assertion.
 - [React Testing Library](https://www.npmjs.com/package/@testing-library/react) for ui testing.
 - [React Hooks Testing Library](https://www.npmjs.com/package/@testing-library/react-hooks) for custom hook testing.
+- [Pact.io](https://www.npmjs.com/package/@pact-foundation/pact)
 
 Note: To invoke all kind of tests use:
 
