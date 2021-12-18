@@ -34,7 +34,8 @@ li {
 
 .list-item {
   border-radius: 0.5rem;
-  background-color:  #f2f2ed;
+  background-color: #f2f2ed;
   padding: 1rem;
   margin-bottom: 0.2rem;
+  text-align: left;
 }
