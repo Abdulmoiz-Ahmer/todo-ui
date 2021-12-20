@@ -40,5 +40,5 @@ test("todo-text", async () => {
     { timeout: 2000 }
   );
 
-  expect(result.current.state.todoList.length).toBe(previousLength + 1);
+  expect(result.current.state.todoList.length).toBeGreaterThan(previousLength);
 });
