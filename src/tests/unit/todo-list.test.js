@@ -17,7 +17,7 @@ test("todo-list", async () => {
     () => {
       return result.current.state.todoList;
     },
-    { timeout: 2000 }
+    { timeout: 5000 }
   );
 
   expect(result.current.state.todoList).not.toHaveLength(0);

@@ -17,7 +17,7 @@ test("todo-text", async () => {
     () => {
       return result.current.state.todoList;
     },
-    { timeout: 2000 }
+    { timeout: 5000 }
   );
 
   const previousLength = result.current.state.todoList.length;
